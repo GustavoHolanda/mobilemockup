@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title> Profile </title>
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 6px; 
+        }
+
+        * {
+            font-family: 'Open Sans', 'Roboto', 'Courier New', Courier, monospace;
+            box-sizing: border-box;
+        }
+
+        .card{
+            height: 125px;
+            position: relative;
+            border: 1px solid #dbdbdb;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            padding: 10px 10px 10px 18px;
+            display: grid;
+        }
+
+        .card::before{
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 6px;
+            height: calc(100% + 2px);
+            background: linear-gradient(to bottom, #4491A6,#2A5966);
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+    
+
+        .grid-template{
+            grid-template: 
+            "logo logo logo logo"
+            "chip chip contactless contactless"
+            "number number number number" 
+            "valid valid expiration expiration"
+            "name name name flag"
+        }
+
+        .logo {
+            grid-area: logo;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 12px;
+        }
+
+        .logo span{
+            font-family: 'Pacifico', cursive !important;
+            color: #f2709c;
+        }
+        
+        .logo span::after{
+            content: 'App';
+            color: #ff9472;
+        }
+
+        .number{
+            grid-area: number;
+            font-family: 'Kredit'!important;
+            font-size: 14px !important;
+            letter-spacing: 1.2px;
+            color: #535353;
+        }
+
+        .name{
+            grid-area: name;
+            font-size: 10px !important;
+            letter-spacing: 1.2px;
+            color: #535353;
+        }
+
+        .name span, .number span, .date{
+            font-family: 'Kredit';
+        }
+
+        .valid{
+            grid-area: valid;
+        }
+
+        .expiration{
+            grid-area: expiration;
+        }
+
+        .valid, .expiration{
+            display: flex;
+            align-items: center;
+
+        }
+
+        .small-size{
+            font-size: 3px;
+            width: 12px;
+            color: #535353;
+        }
+
+        .date{
+            font-size: 10px;
+            color: #535353;
+        }
+        
+        .chip{
+            grid-area: chip;
+        }
+        
+        .chip div{
+            height: 25px;
+            width: 35px;
+            background: linear-gradient(45deg, #76767f, #f3f3f3 );
+            border-radius: 5px;
+            border: .7px solid #57585c;
+            display: grid;
+            grid-template: "area1 area2 area3";
+        }
+
+
+
+        @font-face {
+            font-family: "Kredit";
+            src: url("./font/Kredit/kredit.otf");
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="card grid-template">
+        <div class="logo"> <span>Bank</span> </div>
+        <div class="number"> <span>1234 5678 9876 5432</span> </div>
+        <div class="chip">
+            <div></div>
+        </div>
+        <div class="valid">
+            <span class="small-size">
+                valid from
+            </span>
+            <span class="date" style="margin-left: -2px;">
+                12/21
+            </span>
+        </div>
+        <div class="expiration">
+            <span class="small-size">
+                expires end
+            </span>
+            <span class="date">
+                12/30
+            </span>
+        </div>
+        
+        <div class="expiration"></div>
+        <div class="name"><span> Gustavo F Holanda</span> </div>
+    </div>
+</body>
+
+</html>
